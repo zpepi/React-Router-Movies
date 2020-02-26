@@ -14,7 +14,6 @@ export default class Movie extends Component {
     const id = this.props.match.params.movieId;
     console.log(this.props.match.params.movieId)
     this.fetchMovie(id);
-
   }
 
   fetchMovie = id => {
@@ -44,21 +43,20 @@ export default class Movie extends Component {
       return <div>Loading movie information...</div>;
     }
 
-  const { title, director, metascore, stars } = this.state.movie;
+ const { title, director, metascore, stars } = this.state.movie;
 
-  return (
+ return (
     <div>
-    <div className="save-wrapper">
+   <div className="save-wrapper">
       <div className="movie-card">
         <h2>{title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
         </div>
-        <div className="movie-metascore">
+         <div className="movie-metascore">
           Metascore: <strong>{metascore}</strong>
         </div>
         <h3>Actors</h3>
-
         {stars.map(star => (
           <div star={star} key={star} className="movie-star">
             {star}
